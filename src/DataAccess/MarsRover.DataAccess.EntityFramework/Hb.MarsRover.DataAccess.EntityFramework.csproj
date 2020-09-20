@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="10.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="3.1.7" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.7" />
+		<PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="3.0.59" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Domain\Hb.MarsRover.Domain\Hb.MarsRover.Domain.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\Core\Hb.MarsRover.Infrastructure.Core\Hb.MarsRover.Infrastructure.Core.csproj" />
+	  <ProjectReference Include="..\..\Infrastructure\Logging\MarsRover.Infrastructure.Logging\MarsRover.Infrastructure.Logging.csproj" />
+	  <ProjectReference Include="..\Hb.MarsRover.DataAccess.Core\Hb.MarsRover.DataAccess.Core.csproj" />
+	</ItemGroup>
+
+</Project>

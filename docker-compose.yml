@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  marsrover.api:
+    image: ${DOCKER_REGISTRY-}marsroverapi
+    build:
+      context: .
+      dockerfile: src/Services/MarsRover/MarsRover.Api/Dockerfile
+  rabbitmq:
+    image: rabbitmq:management
+  postgres.data:
+    image: postgres:latest 

@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  marsrover.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  postgres.data:
+    container_name: "marsrover-postgres"
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - db_volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: "marsrover"
+      POSTGRES_PASSWORD: "123"
+      POSTGRES_DB: "marsrover"
+  rabbitmq:
+    container_name: "marsrover-rabbitmq"
+    environment:
+      "RABBITMQ_ERLANG_COOKIE": "unique-erlang-cookie"
+      "RABBITMQ_DEFAULT_USER": "marsrover"
+      "RABBITMQ_DEFAULT_PASS": "123"
+    ports:
+      - "15672:15672"  
+      - "5672:5672"
+      - "4369:4369"
+      - "5671:5671"
+      - "25672:25672"
+    volumes:
+      - rabbitmq_volume:/var/lib/rabbitmq
+volumes:
+  db_volume:    
+  rabbitmq_volume:

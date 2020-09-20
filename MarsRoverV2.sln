@@ -1,0 +1,154 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CC52DB78-783F-49B5-BA28-9C99A3C7FEB8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{C7B27E91-CC65-4C45-BA66-206D953794F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{19A46233-3E2B-41C3-B4C2-9EEC1286D189}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.EventBus", "src\Infrastructure\EventBus\Hb.MarsRover.Infrastructure.EventBus\Hb.MarsRover.Infrastructure.EventBus.csproj", "{7FEAEC06-D03F-452E-B242-4651128417F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.EventBus.RabbitMQ", "src\Infrastructure\EventBus\Hb.MarsRover.Infrastructure.EventBus.RabbitMQ\Hb.MarsRover.Infrastructure.EventBus.RabbitMQ.csproj", "{D5093EE8-304B-4A5E-8228-40FA33629418}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.EventBus.EFEventStore", "src\Infrastructure\EventBus\Hb.MarsRover.Infrastructure.EventBus.EFEventStore\Hb.MarsRover.Infrastructure.EventBus.EFEventStore.csproj", "{4A6B344B-AE14-4EF4-AF93-03BDCE701FDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{10953162-FAAD-4E31-B7F4-B67FC88B8EB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MarsRover", "MarsRover", "{DFE72685-5217-49E5-B755-1AE120EED3D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Api", "src\Services\MarsRover\MarsRover.Api\MarsRover.Api.csproj", "{F519315E-68C1-41EF-A9A3-860502E5CE24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Domain", "src\Services\MarsRover\MarsRover.Domain\MarsRover.Domain.csproj", "{1E3BF32F-A374-4529-A930-F1D111EBD4FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{A9689B54-C306-4A82-9E55-4541AC4BDBA1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.Core.Exception", "src\Infrastructure\Core\Hb.MarsRover.Infrastructure.Core.Exception\Hb.MarsRover.Infrastructure.Core.Exception.csproj", "{68014E6A-82B5-4F40-A36C-4A51567F2415}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Infrastructure", "src\Services\MarsRover\MarsRover.Infrastructure\MarsRover.Infrastructure.csproj", "{1D036E06-11F5-4D3D-A744-5781960FE671}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{9FC36045-7FE3-448B-85B8-B4BB7553300C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.DataAccess.Core", "src\DataAccess\Hb.MarsRover.DataAccess.Core\Hb.MarsRover.DataAccess.Core.csproj", "{EFB0B130-A290-437F-8F9E-81AF66DE5224}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.DataAccess.EntityFramework", "src\DataAccess\MarsRover.DataAccess.EntityFramework\Hb.MarsRover.DataAccess.EntityFramework.csproj", "{1CB8F3B0-DE44-4363-8D08-7B7E025F3274}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.Core", "src\Infrastructure\Core\Hb.MarsRover.Infrastructure.Core\Hb.MarsRover.Infrastructure.Core.csproj", "{F851A385-4E48-4FE5-B373-E2EFDA5D8D85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{BF9E34C0-E708-4E8E-BD9D-A7CC0E13343C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Domain", "src\Domain\Hb.MarsRover.Domain\Hb.MarsRover.Domain.csproj", "{772614E4-A631-4E1D-BE0D-369ABD53FB60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{171D14A6-6CAC-4509-9BC1-887BD510A98A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarsRover.Infrastructure.Logging", "src\Infrastructure\Logging\MarsRover.Infrastructure.Logging\MarsRover.Infrastructure.Logging.csproj", "{46F2E2D1-9C33-42F9-B5EA-4635EB55ED6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{8E2267E0-1D5C-4CC3-8E04-E24346E6A3C9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.Configuration", "src\Infrastructure\Configuration\Hb.MarsRover.Infrastructure.Configuration\Hb.MarsRover.Infrastructure.Configuration.csproj", "{B3E130FB-5148-4D85-B547-A4D10402939E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hb.MarsRover.Infrastructure.Core.Http", "src\Infrastructure\Core\Hb.MarsRover.Infrastructure.Core.Http\Hb.MarsRover.Infrastructure.Core.Http.csproj", "{893C4750-2E1D-428F-A041-728C31BE81D2}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E030DA22-3479-4AC1-A026-55FE49E181A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FEAEC06-D03F-452E-B242-4651128417F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FEAEC06-D03F-452E-B242-4651128417F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FEAEC06-D03F-452E-B242-4651128417F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FEAEC06-D03F-452E-B242-4651128417F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5093EE8-304B-4A5E-8228-40FA33629418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5093EE8-304B-4A5E-8228-40FA33629418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5093EE8-304B-4A5E-8228-40FA33629418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5093EE8-304B-4A5E-8228-40FA33629418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A6B344B-AE14-4EF4-AF93-03BDCE701FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A6B344B-AE14-4EF4-AF93-03BDCE701FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A6B344B-AE14-4EF4-AF93-03BDCE701FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A6B344B-AE14-4EF4-AF93-03BDCE701FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F519315E-68C1-41EF-A9A3-860502E5CE24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F519315E-68C1-41EF-A9A3-860502E5CE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F519315E-68C1-41EF-A9A3-860502E5CE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F519315E-68C1-41EF-A9A3-860502E5CE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E3BF32F-A374-4529-A930-F1D111EBD4FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E3BF32F-A374-4529-A930-F1D111EBD4FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E3BF32F-A374-4529-A930-F1D111EBD4FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E3BF32F-A374-4529-A930-F1D111EBD4FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68014E6A-82B5-4F40-A36C-4A51567F2415}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68014E6A-82B5-4F40-A36C-4A51567F2415}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68014E6A-82B5-4F40-A36C-4A51567F2415}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68014E6A-82B5-4F40-A36C-4A51567F2415}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D036E06-11F5-4D3D-A744-5781960FE671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D036E06-11F5-4D3D-A744-5781960FE671}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D036E06-11F5-4D3D-A744-5781960FE671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D036E06-11F5-4D3D-A744-5781960FE671}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFB0B130-A290-437F-8F9E-81AF66DE5224}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFB0B130-A290-437F-8F9E-81AF66DE5224}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFB0B130-A290-437F-8F9E-81AF66DE5224}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFB0B130-A290-437F-8F9E-81AF66DE5224}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB8F3B0-DE44-4363-8D08-7B7E025F3274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB8F3B0-DE44-4363-8D08-7B7E025F3274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB8F3B0-DE44-4363-8D08-7B7E025F3274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB8F3B0-DE44-4363-8D08-7B7E025F3274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F851A385-4E48-4FE5-B373-E2EFDA5D8D85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F851A385-4E48-4FE5-B373-E2EFDA5D8D85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F851A385-4E48-4FE5-B373-E2EFDA5D8D85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F851A385-4E48-4FE5-B373-E2EFDA5D8D85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{772614E4-A631-4E1D-BE0D-369ABD53FB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{772614E4-A631-4E1D-BE0D-369ABD53FB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{772614E4-A631-4E1D-BE0D-369ABD53FB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{772614E4-A631-4E1D-BE0D-369ABD53FB60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46F2E2D1-9C33-42F9-B5EA-4635EB55ED6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F2E2D1-9C33-42F9-B5EA-4635EB55ED6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F2E2D1-9C33-42F9-B5EA-4635EB55ED6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F2E2D1-9C33-42F9-B5EA-4635EB55ED6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E130FB-5148-4D85-B547-A4D10402939E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E130FB-5148-4D85-B547-A4D10402939E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E130FB-5148-4D85-B547-A4D10402939E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E130FB-5148-4D85-B547-A4D10402939E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893C4750-2E1D-428F-A041-728C31BE81D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893C4750-2E1D-428F-A041-728C31BE81D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893C4750-2E1D-428F-A041-728C31BE81D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893C4750-2E1D-428F-A041-728C31BE81D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E030DA22-3479-4AC1-A026-55FE49E181A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E030DA22-3479-4AC1-A026-55FE49E181A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E030DA22-3479-4AC1-A026-55FE49E181A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E030DA22-3479-4AC1-A026-55FE49E181A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C7B27E91-CC65-4C45-BA66-206D953794F5} = {CC52DB78-783F-49B5-BA28-9C99A3C7FEB8}
+		{19A46233-3E2B-41C3-B4C2-9EEC1286D189} = {C7B27E91-CC65-4C45-BA66-206D953794F5}
+		{7FEAEC06-D03F-452E-B242-4651128417F9} = {19A46233-3E2B-41C3-B4C2-9EEC1286D189}
+		{D5093EE8-304B-4A5E-8228-40FA33629418} = {19A46233-3E2B-41C3-B4C2-9EEC1286D189}
+		{4A6B344B-AE14-4EF4-AF93-03BDCE701FDC} = {19A46233-3E2B-41C3-B4C2-9EEC1286D189}
+		{10953162-FAAD-4E31-B7F4-B67FC88B8EB9} = {CC52DB78-783F-49B5-BA28-9C99A3C7FEB8}
+		{DFE72685-5217-49E5-B755-1AE120EED3D3} = {10953162-FAAD-4E31-B7F4-B67FC88B8EB9}
+		{F519315E-68C1-41EF-A9A3-860502E5CE24} = {DFE72685-5217-49E5-B755-1AE120EED3D3}
+		{1E3BF32F-A374-4529-A930-F1D111EBD4FE} = {DFE72685-5217-49E5-B755-1AE120EED3D3}
+		{A9689B54-C306-4A82-9E55-4541AC4BDBA1} = {C7B27E91-CC65-4C45-BA66-206D953794F5}
+		{68014E6A-82B5-4F40-A36C-4A51567F2415} = {A9689B54-C306-4A82-9E55-4541AC4BDBA1}
+		{1D036E06-11F5-4D3D-A744-5781960FE671} = {DFE72685-5217-49E5-B755-1AE120EED3D3}
+		{9FC36045-7FE3-448B-85B8-B4BB7553300C} = {CC52DB78-783F-49B5-BA28-9C99A3C7FEB8}
+		{EFB0B130-A290-437F-8F9E-81AF66DE5224} = {9FC36045-7FE3-448B-85B8-B4BB7553300C}
+		{1CB8F3B0-DE44-4363-8D08-7B7E025F3274} = {9FC36045-7FE3-448B-85B8-B4BB7553300C}
+		{F851A385-4E48-4FE5-B373-E2EFDA5D8D85} = {A9689B54-C306-4A82-9E55-4541AC4BDBA1}
+		{BF9E34C0-E708-4E8E-BD9D-A7CC0E13343C} = {CC52DB78-783F-49B5-BA28-9C99A3C7FEB8}
+		{772614E4-A631-4E1D-BE0D-369ABD53FB60} = {BF9E34C0-E708-4E8E-BD9D-A7CC0E13343C}
+		{171D14A6-6CAC-4509-9BC1-887BD510A98A} = {C7B27E91-CC65-4C45-BA66-206D953794F5}
+		{46F2E2D1-9C33-42F9-B5EA-4635EB55ED6C} = {171D14A6-6CAC-4509-9BC1-887BD510A98A}
+		{8E2267E0-1D5C-4CC3-8E04-E24346E6A3C9} = {C7B27E91-CC65-4C45-BA66-206D953794F5}
+		{B3E130FB-5148-4D85-B547-A4D10402939E} = {8E2267E0-1D5C-4CC3-8E04-E24346E6A3C9}
+		{893C4750-2E1D-428F-A041-728C31BE81D2} = {A9689B54-C306-4A82-9E55-4541AC4BDBA1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D81192E-7A17-4DA5-B5A5-B15BF3CA82FA}
+	EndGlobalSection
+EndGlobal

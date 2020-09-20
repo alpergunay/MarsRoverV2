@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DataAccess\MarsRover.DataAccess.EntityFramework\Hb.MarsRover.DataAccess.EntityFramework.csproj" />
+    <ProjectReference Include="..\..\..\Domain\Hb.MarsRover.Domain\Hb.MarsRover.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Infrastructure\Core\Hb.MarsRover.Infrastructure.Core.Exception\Hb.MarsRover.Infrastructure.Core.Exception.csproj" />
+  </ItemGroup>
+
+</Project>
