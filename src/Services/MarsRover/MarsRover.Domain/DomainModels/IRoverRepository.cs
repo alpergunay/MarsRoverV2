@@ -12,5 +12,6 @@ namespace MarsRover.Domain.DomainModels
         Rover Add(Rover entity);
         Task<Rover> FindOrDefaultAsync(Guid entityId);
         void Update(Rover entity);
+        Task<ICollection<Rover>> GetAllAsync();
     }
 }

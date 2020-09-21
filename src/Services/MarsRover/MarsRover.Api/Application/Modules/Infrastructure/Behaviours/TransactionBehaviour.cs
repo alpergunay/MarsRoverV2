@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Hb.MarsRover.Infrastructure.EventBus.Extensions;
 using MarsRover.Api.Application.Modules.Infrastructure.IntegrationEvents;
 using MarsRover.Infrastructure;
-using Web.API.Application.Modules.Infrastructure.IntegrationEvents;
 
 namespace MarsRover.Api.Application.Modules.Infrastructure.Behaviours
 {

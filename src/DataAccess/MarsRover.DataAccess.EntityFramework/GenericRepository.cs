@@ -95,9 +95,9 @@ namespace Hb.MarsRover.DataAccess.EntityFramework
             return DbSet.SingleOrDefault(GetByIdPredicate(entityId));
         }
 
-        public Task<TEntity> FindOrDefaultAsync(TEntityId entityId)
+        public virtual async Task<TEntity> FindOrDefaultAsync(TEntityId entityId)
         {
-            return DbSet.SingleOrDefaultAsync(GetByIdPredicate(entityId));
+            return await DbSet.FirstOrDefaultAsync(GetByIdPredicate(entityId)); 
         }
 
         public virtual IQueryable<TEntity> FindAsQueryable(Expression<Func<TEntity, bool>> predicate)

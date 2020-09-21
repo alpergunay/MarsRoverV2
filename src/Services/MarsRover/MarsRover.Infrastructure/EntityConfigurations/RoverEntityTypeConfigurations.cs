@@ -12,10 +12,8 @@ namespace MarsRover.Infrastructure.EntityConfigurations
         public override void Configure(EntityTypeBuilder<Rover> builder)
         {
             builder.ToTable("rovers", MarsRoverContext.DEFAULT_SCHEMA);
-            base.ConfigureForEntity(builder);
-
             builder.Ignore(x => x.CurrentCoordinate);
-            builder.Ignore(x => x.CurrentDirection);
+            base.ConfigureForEntity(builder);
 
             builder
                 .Property("_plateauId")
@@ -40,12 +38,13 @@ namespace MarsRover.Infrastructure.EntityConfigurations
 
             builder.HasOne(p => p.Plateau)
                 .WithMany()
+                .IsRequired()
                 .HasForeignKey("_plateauId");
 
-            builder.HasOne(p => p.CurrentDirection)
+            builder.HasOne(p => p.Direction)
                 .WithMany()
+                .IsRequired()
                 .HasForeignKey("_directionId");
-
         }
     }
 }

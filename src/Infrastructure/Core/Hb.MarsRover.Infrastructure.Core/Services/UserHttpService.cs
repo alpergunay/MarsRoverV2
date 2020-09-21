@@ -19,7 +19,14 @@ namespace Hb.MarsRover.Infrastructure.Core.Services
 
         public string GetUserName()
         {
-            return _httpContext.HttpContext == null ? "admin" : _httpContext.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.Name).Value;
+            if (_httpContext.HttpContext?.User == null)
+                return "admin";
+
+            var claim = _httpContext.HttpContext.User.FindFirst(x => x.Type == ClaimTypes.Name);
+
+            if (claim != null)
+                return claim.Value;
+            return "admin";
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
+using Hb.MarsRover.Infrastructure.Core.Services;
 using MarsRover.Domain.DomainModels;
 using MarsRover.Infrastructure.Idempotency;
 using MarsRover.Infrastructure.Repositories;
@@ -27,6 +28,14 @@ namespace MarsRover.Api.Infrastructure.AutofacModules
 
             builder.RegisterType<PlateauRepository>()
                 .As<IPlateauRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<RoverRepository>()
+                .As<IRoverRepository>()
+                .InstancePerLifetimeScope();
+
+            builder.RegisterType<UserHttpService>()
+                .As<IUserService>()
                 .InstancePerLifetimeScope();
 
             #endregion

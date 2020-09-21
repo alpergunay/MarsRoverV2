@@ -16,13 +16,15 @@ namespace MarsRover.Infrastructure.EntityConfigurations
 
             builder.Ignore(p => p.Coordinate);
             builder
-                .Property("_xCoordinate")
+                //.Property("_xCoordinate")
+                .Property(p=>p.XCoordinate)
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("XCoordinate")
                 .IsRequired();
 
             builder
-                .Property("_yCoordinate")
+                //.Property("_yCoordinate")
+                .Property(p => p.YCoordinate)
                 .UsePropertyAccessMode(PropertyAccessMode.Field)
                 .HasColumnName("YCoordinate")
                 .IsRequired();

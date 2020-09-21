@@ -24,34 +24,31 @@ namespace MarsRover.Infrastructure
         public DbSet<Plateau> Plateaus { get; set; }
         public DbSet<Command> Commands { get; set; }
         public DbSet<Direction> Directions { get; set; }
+        public DbSet<Rover> Rovers { get; set; }
 
-        protected MarsRoverContext(DbContextOptions<MarsRoverContext> options, IUserService userService) : base(options,
-            userService)
-        {
-        }
+        //protected MarsRoverContext(DbContextOptions<MarsRoverContext> options, IUserService userService) : base(options,
+        //    userService)
+        //{
+        //}
 
 
-        public MarsRoverContext() : base(new DbContextOptionsBuilder<MarsRoverContext>()
-            .UseNpgsql("Server=localhost;Database=marsrover;User ID=marsrover;Password=123").Options)
-        {
-        }
+        //public MarsRoverContext() : base(new DbContextOptionsBuilder<MarsRoverContext>()
+        //    .UseNpgsql("Server=localhost;Database=marsrover;User ID=marsrover;Password=123").Options)
+        //{
+        //}
 
-        public MarsRoverContext(DbContextOptions<MarsRoverContext> options) : base(options) { }
+        //public MarsRoverContext(DbContextOptions<MarsRoverContext> options) : base(options) { }
 
-        public MarsRoverContext(DbContextOptions<MarsRoverContext> options, IMediator mediator, IUserService service)
-            : base(options, service)
+        public MarsRoverContext(DbContextOptions<MarsRoverContext> options, IMediator mediator)
+            : base(options)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
-        public override async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
+        public override async  Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             await _mediator.DispatchDomainEventsAsync(this);
-
-            // After executing this line all the changes (from the Command Handler and Domain Event Handlers)
-            // performed through the DbContext will be committed
             var result = await base.SaveChangesAsync(cancellationToken);
-
             return true;
         }
 

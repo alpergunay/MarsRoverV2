@@ -78,8 +78,8 @@ namespace MarsRover.Infrastructure.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: false),
-                    DirectionId = table.Column<int>(nullable: false),
                     PlateauId = table.Column<Guid>(nullable: false),
+                    DirectionId = table.Column<int>(nullable: false),
                     XCoordinate = table.Column<int>(nullable: false),
                     YCoordinate = table.Column<int>(nullable: false)
                 },

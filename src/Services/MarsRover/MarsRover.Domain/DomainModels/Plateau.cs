@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using Hb.MarsRover.Domain.Types;
 using MarsRover.Domain.Exceptions;
 
@@ -6,8 +7,13 @@ namespace MarsRover.Domain.DomainModels
 {
     public class Plateau : Entity, IAggregateRoot<Guid>
     {
-        private int _xCoordinate;
-        private int _yCoordinate;
+        [DataMember]
+        //private int _xCoordinate;
+        public int XCoordinate { get; set; }
+        [DataMember]
+        //private int _yCoordinate;
+        public int YCoordinate { get; set; }
+        [IgnoreDataMember]
         public Coordinate Coordinate { get; set; }
 
 
@@ -16,9 +22,11 @@ namespace MarsRover.Domain.DomainModels
             if (xCoordinate <= 0 || yCoordinate <= 0)
                 throw new PlateauDomainException("Invalid Coordinates");
             Id = id;
-            _xCoordinate = xCoordinate;
-            _yCoordinate = yCoordinate;
-            InitializePlateau(_xCoordinate, _yCoordinate);
+            //_xCoordinate = xCoordinate;
+            //_yCoordinate = yCoordinate;
+            XCoordinate = xCoordinate;
+            YCoordinate = yCoordinate;
+            InitializePlateau(XCoordinate, YCoordinate);
 
         }
         public void InitializePlateau(int x, int y)

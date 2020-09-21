@@ -114,11 +114,11 @@ namespace MarsRover.Infrastructure.Migrations
                     b.Property<string>("Modifier")
                         .HasColumnType("text");
 
-                    b.Property<int>("_xCoordinate")
+                    b.Property<int>("XCoordinate")
                         .HasColumnName("XCoordinate")
                         .HasColumnType("integer");
 
-                    b.Property<int>("_yCoordinate")
+                    b.Property<int>("YCoordinate")
                         .HasColumnName("YCoordinate")
                         .HasColumnType("integer");
 
@@ -175,7 +175,7 @@ namespace MarsRover.Infrastructure.Migrations
 
             modelBuilder.Entity("MarsRover.Domain.DomainModels.Rover", b =>
                 {
-                    b.HasOne("MarsRover.Domain.DomainModels.Direction", "CurrentDirection")
+                    b.HasOne("MarsRover.Domain.DomainModels.Direction", "Direction")
                         .WithMany()
                         .HasForeignKey("_directionId")
                         .OnDelete(DeleteBehavior.Cascade)

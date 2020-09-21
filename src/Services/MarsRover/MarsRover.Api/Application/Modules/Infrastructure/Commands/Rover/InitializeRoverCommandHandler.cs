@@ -29,7 +29,7 @@ namespace MarsRover.Api.Application.Modules.Infrastructure.Commands.Rover
         }
         public async Task<InitializeRoverResponseModel> Handle(InitializeRoverCommand request, CancellationToken cancellationToken)
         {
-            var plateau = _plateauRepository.FindOrDefaultAsync(request.PlateauId);
+            var plateau = await _plateauRepository.FindOrDefaultAsync(request.PlateauId);
 
             if (plateau == null)
             {

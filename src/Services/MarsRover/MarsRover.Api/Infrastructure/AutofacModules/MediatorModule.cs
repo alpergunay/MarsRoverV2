@@ -7,6 +7,7 @@ using Autofac;
 using FluentValidation;
 using MarsRover.Api.Application.Modules.Infrastructure.Behaviours;
 using MarsRover.Api.Application.Modules.Infrastructure.Commands.Plateau;
+using MarsRover.Api.Application.Modules.Infrastructure.DomainEventHandlers.RoverMoved;
 using MarsRover.Api.Application.Modules.Infrastructure.Validations.Plateau;
 using MediatR;
 
@@ -23,9 +24,9 @@ namespace MarsRover.Api.Infrastructure.AutofacModules
             builder.RegisterAssemblyTypes(typeof(InitializePlateauCommand).GetTypeInfo().Assembly)
                 .AsClosedTypesOf(typeof(IRequestHandler<,>));
 
-            //// Register the DomainEventHandler classes (they implement INotificationHandler<>) in assembly holding the Domain Events
-            //builder.RegisterAssemblyTypes(typeof(ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler).GetTypeInfo().Assembly)
-            //    .AsClosedTypesOf(typeof(INotificationHandler<>));
+            // Register the DomainEventHandler classes (they implement INotificationHandler<>) in assembly holding the Domain Events
+            builder.RegisterAssemblyTypes(typeof(RoverMovedDomainEventHandler).GetTypeInfo().Assembly)
+                .AsClosedTypesOf(typeof(INotificationHandler<>));
 
             builder
                 .RegisterAssemblyTypes(typeof(InitializePlateauCommandValidator).GetTypeInfo().Assembly)

@@ -1,20 +1,20 @@
 ﻿using Hb.MarsRover.Domain.Types;
 using MarsRover.Domain.Exceptions;
 using System;
+using System.Linq;
 using MarsRover.Domain.Events;
 
 namespace MarsRover.Domain.DomainModels
 {
     public class Rover : Entity, IAggregateRoot<Guid>
     {
-        public Direction CurrentDirection { get; set; }
         public Coordinate CurrentCoordinate { get; private set; }
         private Guid _plateauId;
         public Plateau Plateau { get; private set; }
-        private readonly Guid _roverId;
+        private int _directionId;
+        public Direction Direction { get; private set; }
         private int _xCoordinate;
         private int _yCoordinate;
-        private int _directionId;
 
         public Rover(Guid id, int xCoordinate, int yCoordinate, int directionId, Guid plateauId)
         {
@@ -22,14 +22,14 @@ namespace MarsRover.Domain.DomainModels
             _xCoordinate = xCoordinate;
             _yCoordinate = yCoordinate;
             _directionId = directionId;
-            _roverId = id;
+            Id = id;
             InitializeCurrentCoordinate(xCoordinate, yCoordinate);
             InitializeCurrentDirection(directionId);
         }
 
         public void InitializeCurrentDirection(int directionId)
         {
-            CurrentDirection = Enumeration.FromValue<Direction>(directionId);
+            Direction = Enumeration.FromValue<Direction>(directionId);
         }
 
         public void InitializeCurrentCoordinate(int x, int y)
@@ -54,21 +54,25 @@ namespace MarsRover.Domain.DomainModels
             if(!CanRoverMove())
                 throw new MarsRoverDomainException("Rover cannot move to outside of the Plateau");
             var isMoved = true;
-            if (CurrentDirection == Direction.E)
+            if (Direction == Direction.E)
             {
                 this.CurrentCoordinate.XCoordinate++;
+                _xCoordinate++;
             }
-            else if (CurrentDirection == Direction.W)
+            else if (Direction == Direction.W)
             {
                 this.CurrentCoordinate.XCoordinate--;
+                _xCoordinate--;
             }
-            else if (CurrentDirection == Direction.N)
+            else if (Direction == Direction.N)
             {
                 this.CurrentCoordinate.YCoordinate++;
+                _yCoordinate++;
             }
-            else if (CurrentDirection == Direction.S)
+            else if (Direction == Direction.S)
             {
                 this.CurrentCoordinate.YCoordinate--;
+                _yCoordinate--;
             }
             else
             {
@@ -106,21 +110,21 @@ namespace MarsRover.Domain.DomainModels
         private bool RotateLeft()
         {
             var isRotated = true;
-            if (CurrentDirection == Direction.N)
+            if (Direction == Direction.N)
             {
-                CurrentDirection = Direction.W;
+                Direction = Direction.W;
             }
-            else if (CurrentDirection == Direction.W)
+            else if (Direction == Direction.W)
             {
-                CurrentDirection = Direction.S;
+                Direction = Direction.S;
             }
-            else if(CurrentDirection == Direction.S)
+            else if(Direction == Direction.S)
             {
-                CurrentDirection = Direction.E;
+                Direction = Direction.E;
             }
-            else if(CurrentDirection == Direction.E)
+            else if(Direction == Direction.E)
             {
-                CurrentDirection = Direction.N;
+                Direction = Direction.N;
             }
             else
             {
@@ -134,21 +138,21 @@ namespace MarsRover.Domain.DomainModels
         private bool RotateRight()
         {
             var isRotated = true;
-            if (CurrentDirection == Direction.N)
+            if (Direction == Direction.N)
             {
-                CurrentDirection = Direction.E;
+                Direction = Direction.E;
             }
-            else if(CurrentDirection == Direction.E)
+            else if(Direction == Direction.E)
             {
-                CurrentDirection = Direction.S;
+                Direction = Direction.S;
             }
-            else if(CurrentDirection == Direction.S)
+            else if(Direction == Direction.S)
             {
-                CurrentDirection = Direction.W;
+                Direction = Direction.W;
             }
-            else if(CurrentDirection == Direction.W)
+            else if(Direction == Direction.W)
             {
-                CurrentDirection = Direction.N;
+                Direction = Direction.N;
             }
             else
             {
@@ -161,17 +165,18 @@ namespace MarsRover.Domain.DomainModels
         }
         public bool CanRoverMove()
         {
-            return (CurrentDirection != Direction.N ||
+            return (Direction != Direction.N ||
                     CurrentCoordinate.YCoordinate + 1 <= Plateau.Coordinate.YCoordinate) &&
-                   (CurrentDirection != Direction.W || CurrentCoordinate.XCoordinate - 1 >= 0) &&
-                   (CurrentDirection != Direction.S || CurrentCoordinate.YCoordinate - 1 >= 0) &&
-                   (CurrentDirection != Direction.E ||
+                   (Direction != Direction.W || CurrentCoordinate.XCoordinate - 1 >= 0) &&
+                   (Direction != Direction.S || CurrentCoordinate.YCoordinate - 1 >= 0) &&
+                   (Direction != Direction.E ||
                     CurrentCoordinate.XCoordinate + 1 <= Plateau.Coordinate.XCoordinate);
         }
 
         public Command[] DecodeInstruction(string instruction)
         {
-            var instructionList = instruction.Split(' ');
+            var instructionList = instruction.ToCharArray().Select(c => c.ToString()).ToArray();
+
             Command[] commands;
             try
             {
@@ -184,19 +189,19 @@ namespace MarsRover.Domain.DomainModels
             return commands;
         }
 
-        public void ProcessInstruction(string instruction)
+        public Command[] ProcessInstruction(string instruction)
         {
-            var commands = DecodeInstruction(instruction);
+            return DecodeInstruction(instruction);
 
-            foreach (var command in commands)
-            {
-                ProcessCommand(command);
-            }
-            AddDomainEvent(new InstructionProcessedDomainEvent(this));
+            //foreach (var command in commands)
+            //{
+            //    ProcessCommand(command);
+            //}
+            //AddDomainEvent(new InstructionProcessedDomainEvent(this));
         }
         public string DisplayPosition()
         {
-            return $"{CurrentCoordinate.ToString()} {CurrentDirection}";
+            return $"{CurrentCoordinate.ToString()} {Direction}";
         }
     }
 }
